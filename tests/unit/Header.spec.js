@@ -24,7 +24,7 @@ describe('Header component', () => {
         "July", "August", "September", "October", "November", "December"
         ];
         let month = new Date().getMonth();
-        expect(wrapper.html()).toContain(monthNames[month - 1])
+        expect(wrapper.html()).toContain(monthNames[month].toUpperCase().slice(0,3))
     })
 
 
@@ -40,6 +40,6 @@ describe('Header component', () => {
         weekday[6] = "Saturday";
         let day = weekday[d.getDay()];
 
-        expect(wrapper.find("weekday")).toContain(day)
+        expect(wrapper.html()).toContain(day.toUpperCase())
     })
 });
